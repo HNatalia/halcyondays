@@ -1,0 +1,22 @@
+{
+  "name": "halcyondays",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HNatalia/html-fun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HNatalia/html-fun/issues"
+  },
+  "homepage": "https://github.com/HNatalia/html-fun#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.5"
+  }
+}

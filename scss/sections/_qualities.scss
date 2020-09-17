@@ -1,0 +1,139 @@
+#qualities {
+	display: flex;
+	flex-direction: column;
+
+	.viewport {
+		width: 80%;
+		height: 500px;
+		margin: 0 auto;
+		overflow: hidden;
+		padding-top: 103px;
+
+		.items-container {
+			width: 300%;
+			display: flex;
+			transition: 1s;
+
+			.items {
+				display: flex;
+
+				.project {
+					margin-right: 30px;
+					@include flex-col;
+					text-align: center;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					a {
+						position: relative;
+						display: flex;
+
+						.hover-overlay {
+							background-color: rgba(61, 201, 179, 0.7);
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							@include flex-col;
+							justify-content: center;
+							transition: 0.4s;
+							opacity: 0;
+
+							h4 {
+								color: $primary-color;
+								font-weight: 100;
+								margin-top: 15px;
+							}
+
+							&:hover {
+								opacity: 1;
+							}
+						}
+
+						.project-img {
+							max-width: 355px;
+							width: 100%;
+						}
+					}
+
+					h4 {
+						margin: 35px 0 12px 0;
+					}
+				}
+			}
+		}
+	}
+
+	.bullets {
+		margin: 50px 0 100px 0;
+	}
+}
+
+#ignite {
+	background-color: $bg-dark-color;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 1.4s;
+
+	button {
+		border: 1px solid $primary-color;
+		background-color: transparent;
+		color: $primary-color;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 15px;
+		padding: 32px 38px;
+		margin: 63px 0 60px 0;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			border-color: $accent-color;
+			color: $accent-color;
+		}
+	}
+
+	&.fade-in {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.items-container {
+		.project {
+			h4 {
+				font-size: 12px;
+				letter-spacing: 3px;
+			}
+
+			.text {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.viewport {
+		height: auto;
+
+		.items-container {
+			flex-direction: column;
+
+			.project {
+				margin-bottom: 25px;
+				margin-right: 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

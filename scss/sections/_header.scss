@@ -1,0 +1,255 @@
+header {
+  height: 100vh;
+  background-image: url(../img/header-bg.png);
+  @include main-bg-img;
+
+  .main-container {
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    @include flex-col;
+    justify-content: space-around;
+
+    nav {
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+
+      .navbar {
+        margin-right: 20px;
+        display: block;
+        width: 0;
+        position: absolute;
+        right: 20px;
+        transition: width 1s ease-in-out;
+        overflow: hidden;
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+          background-color: $bg-dark-color;
+          padding: 8px 30px;
+
+          li {
+            margin: 0 10px;
+            text-align: center;
+
+            a {
+              color: $primary-color;
+              font-family: $secondary-font;
+              font-weight: 100;
+              text-transform: lowercase;
+              transition: 0.2s;
+              font-size: 15px;
+
+              &:hover {
+                color: $accent-color;
+              }
+            }
+          }
+        }
+
+        &.open {
+          width: 95%;
+        }
+      }
+
+      .hamburger-menu {
+        cursor: pointer;
+        width: 25px;
+        height: 20px;
+        background-color: transparent;
+        position: relative;
+        margin-left: 15px;
+
+        .lines {
+          top: 8px;
+          width: 25px;
+          height: 3px;
+          background-color: $caption-color;
+          position: relative;
+
+          &:before {
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 3px;
+            background-color: $caption-color;
+            margin-bottom: 3px;
+            top: -6px;
+            left: 0;
+          }
+
+          &:after {
+            position: absolute;
+            content: "";
+            width: 25px;
+            height: 3px;
+            background-color: $caption-color;
+            margin-bottom: 3px;
+            top: 6px;
+            left: 0;
+          }
+        }
+
+        &.close {
+          .lines {
+            transform: rotate(45deg);
+
+            &:before {
+              transform: rotate(-90deg);
+              top: 0;
+            }
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      @include flex-col;
+      justify-content: space-between;
+      height: 200px;
+
+      h1 {
+        font-family: $secondary-font;
+        font-size: 40px;
+        letter-spacing: 13px;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: $caption-color;
+        margin-bottom: 18px;
+
+        span {
+          color: $header-color;
+        }
+      }
+
+      .description {
+        color: $paragraph-color;
+        font-size: 15px;
+        font-family: $secondary-font;
+        letter-spacing: 2px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      button {
+        font-family: $secondary-font;
+        font-weight: 100;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $primary-color;
+        padding: 20px 36px;
+        background-color: $accent-color;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 3px 0px 0px $accent-shadow-color;
+        cursor: pointer;
+        transition: color 1s;
+
+        &:focus {
+          outline: none;
+        }
+
+        span {
+          opacity: 0;
+          transition: 2s;
+
+          &.fade {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .jumbotron-btn {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    .main-container {
+      nav {
+        .navbar {
+          position: absolute;
+          width: 0;
+          margin-right: 15px;
+
+          ul {
+            @include flex-col;
+            justify-content: space-between;
+            height: 60vh;
+            padding: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  header {
+    .main-container {
+      nav {
+        .navbar {
+          width: 0;
+          margin-right: 0;
+          right: 0;
+
+          ul {
+            height: 80vh;
+          }
+
+          &.open {
+            @keyframes width {
+              from {
+                width: 0;
+              }
+              to {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .hamburger-menu.close {
+          background-color: transparent;
+
+          .lines {
+            background-color: $primary-color;
+
+            &:before {
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  header {
+    .main-container {
+      .content {
+        h1 {
+          font-size: 24px;
+        }
+
+        .description {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

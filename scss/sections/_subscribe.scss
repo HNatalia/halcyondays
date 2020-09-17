@@ -1,0 +1,51 @@
+#subscribe {
+	background-image: url(../img/bg4.png);
+	@include main-bg-img;
+	@include flex-col;
+	justify-content: center;
+	padding: 120px 0 150px 0;
+
+	h4 {
+		color: $primary-color;
+		margin: 20px 0 40px 0;
+	}
+
+	form {
+		#email {
+			border: 1px solid $primary-color;
+			background-color: transparent;
+			color: $primary-color;
+			padding: 25px;
+			width: 355px;
+
+			&:focus {
+				border-radius: none;
+				outline: none;
+			}
+		}
+
+		#submit {
+			border: none;
+			background-color: $accent-color;
+			padding: 26px;
+			color: $primary-color;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			cursor: pointer;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 490px) {
+	#subscribe {
+		form {
+			#email {
+				width: 200px;
+			}
+		}
+	}
+}

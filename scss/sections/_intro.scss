@@ -1,0 +1,23 @@
+#intro {
+	background-color: $secondary-color;
+	opacity: 0;
+	transition: opacity 1.4s;
+
+	.container {
+		width: 70%;
+		margin: 0 auto;
+		padding: 102px 0 150px 0;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.text {
+		strong {
+			color: $caption-color;
+		}
+	}
+
+	&.fade-in {
+		opacity: 1;
+	}
+}

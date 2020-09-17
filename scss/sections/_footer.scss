@@ -1,0 +1,43 @@
+footer {
+	background-color: $bg-dark-color;
+
+	.text-container {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+
+		p {
+			color: $primary-color;
+			font-family: $secondary-font;
+			font-size: 14px;
+			padding: 55px 0;
+			text-align: center;
+
+			&:first-child {
+				color: $paragraph-color;
+			}
+		}
+
+		strong {
+			color: $paragraph-color;
+			font-weight: normal;
+
+			&:first-child {
+				font-family: $secondary-font;
+			}
+
+		}
+	}
+}
+
+@media screen and (max-width: 470px) {
+	.text-container {
+		flex-direction: column;
+		justify-content: center;
+
+		p:last-child {
+			padding-top: 0;
+		}
+	}
+}

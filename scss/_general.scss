@@ -1,0 +1,14 @@
+body {
+	font-family: $main-font;
+	overflow-x: hidden;
+}
+
+a {
+  font-family: $main-font;
+}
+
+footer, header {
+  strong {
+    font-family: $adition-font;
+  }
+}

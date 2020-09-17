@@ -1,0 +1,19 @@
+@mixin main-bg-img {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+@mixin motto-text {
+	font-family: $secondary-font;
+	font-weight: 100;
+	color: $primary-color;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+@mixin flex-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
