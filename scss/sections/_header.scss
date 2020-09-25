@@ -54,6 +54,10 @@ header {
 
         &.open {
           width: 95%;
+
+          @media screen and (max-width: 730px) {
+            width: 100%;
+          }
         }
       }
 
@@ -184,6 +188,7 @@ header {
           position: absolute;
           width: 0;
           margin-right: 15px;
+          top: 0;
 
           ul {
             @include flex-col;
@@ -243,7 +248,7 @@ header {
     .main-container {
       .content {
         h1 {
-          font-size: 24px;
+          font-size: 20px;
         }
 
         .description {

@@ -22,6 +22,13 @@
 				@include flex-col;
 				margin: 0 10px;
 				overflow: hidden;
+				@media screen and (max-width: 730px) {
+					margin-top: 30px;
+
+					&:first-child {
+						margin-top: 0;
+					}
+				}
 
 				.icon {
 					width: 150px;
@@ -76,14 +83,6 @@
 	.container {
 		.info-wrapper {
 			flex-direction: column;
-
-			.card {
-				margin-top: 25px;
-
-				&:first-child {
-					margin-top: 0;
-				}
-			}
 		}
 	}
 }

@@ -10,6 +10,15 @@
 		width: 100%;
 		overflow: hidden;
 		position: relative;
+		@media screen and (max-width: 1120px) {
+			height: 600px;
+		}
+		@media screen and (max-width: 880px) {
+			height: 1545px;
+		}
+		@media screen and (max-width: 530px) {
+			height: 1580px;
+		}
 
 		.slide {
 			display: flex;
@@ -18,16 +27,22 @@
 			height: 100%;
 			opacity: 0;
 			transition: 2s;
+ 			@media screen and (max-width: 880px) {
+				flex-direction: column;
+			}
 
 			.member {
 				@include flex-col;
 				text-align: center;
 				margin-right: 20px;
-				justify-content: space-between;
+				@media screen and (max-width: 880px) {
+					margin-bottom: 40px;
+					margin-right: 0;
+				}
 
 				.title {
 					.underline {
-						margin: 0 auto;
+						margin: 0 auto 30px auto;
 					}
 				}
 
@@ -38,6 +53,10 @@
 				h4 {
 					margin: 50px 0 15px 0;
 				}
+
+				.social {
+					margin-top: 40px;
+				}
 			}
 
 			&.active {
@@ -47,34 +66,3 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.team-container {
-		.team-members {
-			h4 {
-				font-size: 12px;
-				letter-spacing: 3px;
-			}
-
-			.text {
-				font-size: 12px;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 720px) {
-	.team-container {
-		.team-members {
-			flex-direction: column;
-			margin-bottom: 25px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			.member {
-				margin-right: 0;
-			}
-		}
-	}
-}

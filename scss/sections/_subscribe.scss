@@ -30,7 +30,7 @@
 			padding: 26px;
 			color: $primary-color;
 			text-transform: uppercase;
-			letter-spacing: 2px;
+			letter-spacing: 3px;
 			cursor: pointer;
 
 			&:focus {
@@ -44,7 +44,12 @@
 	#subscribe {
 		form {
 			#email {
-				width: 200px;
+				width: 100%;
+			}
+
+			#submit {
+				width: 100%;
+				margin-top: 20px;
 			}
 		}
 	}
